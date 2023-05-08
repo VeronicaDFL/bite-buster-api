@@ -5,7 +5,8 @@ const coll = db.collection("restaurants")
 
 //GET
 export async function getAllRestaurants(req, res) {
-    const restaurants = await coll.find({}).toArray()
+    const dayOfWeek = req.params.day
+    const restaurants = await coll.find({day:dayOfWeek}).toArray()
     res.send(restaurants)
 }
 
