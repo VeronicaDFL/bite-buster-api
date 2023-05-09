@@ -3,17 +3,16 @@ import express from "express"
 import cors from "cors"
 import { getAllRestaurants, addRestaurant, updateRestaurant, deleteRestaurant } from "./src/restaurants.js"
 
-const PORT = 3000
-
-const app = express() //defining app.
-
+//defining app.
+const app = express() 
 app.use(cors())
 app.use(express.json())
+// const PORT = 3000
+
 
 //routes will go here..
-
 app.get("/",(req,res) =>{
-    res.send('Hello')
+    res.send('Hello!')
 })
 
 //end points..
@@ -22,12 +21,12 @@ app.get("/",(req,res) =>{
 // http://127.0.0.1:3000/restaurants
 
 
-app.get("/restaurants/:day", getAllRestaurants)
+app.get("/restaurants/:dayName", getAllRestaurants)
 app.post("/restaurants", addRestaurant)
 app.patch("/restaurants/:docId",updateRestaurant)
 app.delete("/restaurant/:docId",deleteRestaurant)
 
-app.listen(3000, () => console.log(`Listening on http://localhost:3000...`))
+// app.listen(3000, () => console.log(`Listening on http://localhost:3000...`))
 
 
 

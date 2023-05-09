@@ -3,12 +3,20 @@ import { ObjectId } from "mongodb"
 
 const coll = db.collection("restaurants")
 
+
+
 //GET
 export async function getAllRestaurants(req, res) {
-    const dayOfWeek = req.params.day
-    const restaurants = await coll.find({day:dayOfWeek}).toArray()
+    const {dayName} = req.params
+
+    const restaurants = await coll
+        .find( {day: dayName} )
+        .toArray()
     res.send(restaurants)
 }
+
+
+
 
 //POST
 export async function addRestaurant(req,res) {
