@@ -24,7 +24,7 @@ app.get("/",(req,res) =>{
 app.get("/restaurants/:dayName", getAllRestaurants)
 app.post("/restaurants", addRestaurant)
 app.patch("/restaurants/:docId",updateRestaurant)
-app.delete("/restaurant/:docId",deleteRestaurant)
+app.delete("/restaurants/:docId",deleteRestaurant)
 
 // app.listen(3000, () => console.log(`Listening on http://localhost:3000...`))
 
